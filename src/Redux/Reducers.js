@@ -4,7 +4,8 @@ import { combineReducers } from "redux"
 const FetchStateInit = {
     RoomDatas : [],
     isFetch : false,
-    didInvalidata : false
+    didInvalidata : false,
+    fetchFail : false
 }
 
 const FetchDataReducers = (state=FetchStateInit,action) => {
@@ -13,7 +14,8 @@ const FetchDataReducers = (state=FetchStateInit,action) => {
             return{
                 ...state,
                 isFetch : true,
-                didInvalidata : false
+                didInvalidata : false,
+                fetchFail : false
             }
         
         case "FETCH_DATA_SUCCESS":
@@ -22,6 +24,7 @@ const FetchDataReducers = (state=FetchStateInit,action) => {
                 isFetch : false,
                 didInvalidata : false,
                 RoomDatas : action.payload,
+                fetchFail : false
             }
 
         case "FETCH_DATA_FAIL":
@@ -29,6 +32,7 @@ const FetchDataReducers = (state=FetchStateInit,action) => {
                 ...state,
                 isFetch : false,
                 didInvalidata : true,
+                fetchFail : true
             }
             
         default:

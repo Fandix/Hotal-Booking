@@ -9,7 +9,7 @@ class RoomsData extends React.Component
 {
     state = {
         RoomsData : [],
-        isFetch : false
+        isFetch : false,
     }
 
     componentDidMount(){
@@ -29,6 +29,12 @@ class RoomsData extends React.Component
                 RoomsData : this.props.Rooms,
             })
         }
+
+        if(this.props.fetchFail !== prevProps.fetchFail || this.props.fetchFail === true){
+            if(this.props.fetchFail === true){
+                this.props.dispatch(FetchRoomsData());
+            }
+        }
     }
 
     render()
@@ -36,7 +42,7 @@ class RoomsData extends React.Component
         return(
             <div>
                 {
-                    this.state.isFetch === true?<Loading /> 
+                    this.state.isFetch === true || this.props.fetchFail === true ?<Loading /> 
                     :<App
                         roomsData = {this.state.RoomsData}
                     />
@@ -49,7 +55,8 @@ class RoomsData extends React.Component
 const mapStateToProps  = (state) => {
     return{
         Rooms : state.FetchDataReducers.RoomDatas.items,
-        isFetch : state.FetchDataReducers.isFetch
+        isFetch : state.FetchDataReducers.isFetch,
+        fetchFail : state.FetchDataReducers.fetchFail
     }
 }
 
