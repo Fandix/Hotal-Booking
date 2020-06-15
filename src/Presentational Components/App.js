@@ -1,5 +1,6 @@
 import React from "react"
 import Header from "./Header/Header"
+import RoomCards from "./RoomCards/RoomCards"
 
 class App extends React.Component
 {
@@ -7,7 +8,8 @@ class App extends React.Component
     {
         return(
             <div>
-                <Header RoomsData = {this.props.roomsData}/>
+                <Header />
+                <RoomCards RoomsData = {this.props.roomsData}/>
             </div>
         )
     }

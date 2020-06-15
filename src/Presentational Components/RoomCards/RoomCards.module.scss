@@ -1,0 +1,23 @@
+.wrap{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 925px;
+    margin-top: -100px;
+    margin-bottom: 100px;
+    .box{
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        a{
+            width: 300px;
+            height: 400px;
+            margin: 0 23px 58px 23px;
+            text-decoration: none;
+            box-shadow: 2px 2px 9px 0 rgba(0,0,0,0.18);
+        }
+    }
+}
