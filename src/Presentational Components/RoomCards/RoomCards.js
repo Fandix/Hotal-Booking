@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./RoomCards.module.scss"
 import RoomCard from "../RoomCard/RoomCard";
-import { Link } from "react-router-dom";
 
 const RoomCards = (props) => {
     const RoomsData = [...props.RoomsData];
@@ -13,9 +12,7 @@ const RoomCards = (props) => {
                 {
                     RoomsData.map(roomdata => {
                         return(
-                            <Link key={i++}>
-                                <RoomCard roomdata={roomdata}/>
-                            </Link>
+                            <RoomCard roomdata={roomdata}/>
                         )
                     })
                 }
