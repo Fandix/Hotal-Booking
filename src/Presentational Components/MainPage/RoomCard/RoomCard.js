@@ -3,10 +3,15 @@ import style from "./RoomCard.module.scss"
 import { Link } from "react-router-dom";
 
 const RoomCard = (props) => {
-    const {holidayPrice,imageUrl,name,normalDayPrice} = props.roomdata;
-    console.log(props)
+    const {holidayPrice,imageUrl,name,normalDayPrice,id} = props.roomdata;
     return(
-        <Link>
+        <Link 
+            to={{
+                pathname:`/room/${id}`,
+                state: { roomID: id },
+            }}
+            className={style.link}
+        >
             <div className={style.wrap}>
                 <div className={style.img}>
                     <img src={imageUrl} alt="RoomImg" />
@@ -16,7 +21,7 @@ const RoomCard = (props) => {
                         <div className={style.name}><p>{name}</p></div>
                         <div className={style.price}>
                             <div className={style.nomoday}>NT.{normalDayPrice}<span>Weekday</span></div>
-                            <div className={style.holiday}>NT.{holidayPrice}<span>Weekday</span></div>
+                            <div className={style.holiday}>NT.{holidayPrice}<span>Weekend</span></div>
                         </div>
                     </div>
                 </div>

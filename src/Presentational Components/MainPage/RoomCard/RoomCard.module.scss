@@ -1,4 +1,4 @@
-a{
+.link{
     text-decoration: none;
     margin: 0 23px 58px 23px;
     .wrap {
@@ -47,7 +47,7 @@ a{
     :hover .info .infobox .price{
         background-color: #e4e4e4;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         color: #000;
         .nomoday{
             font-size: 21px;
@@ -61,6 +61,11 @@ a{
             font-size: 11px;
             color: #6D7278;
             margin-top: 6px;
+            font-size: 15px;
+            span{
+                margin-left: 5px;
+                font-size: 9px;
+            }
         }
         
     }

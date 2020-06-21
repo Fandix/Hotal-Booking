@@ -12,7 +12,7 @@ const RoomCards = (props) => {
                 {
                     RoomsData.map(roomdata => {
                         return(
-                            <RoomCard roomdata={roomdata}/>
+                            <RoomCard roomdata={roomdata} key={i++}/>
                         )
                     })
                 }

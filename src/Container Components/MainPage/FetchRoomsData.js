@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { RequestPost,FetchRoomsData } from "../Redux/Action";
+import { RequestPost,FetchRoomsData } from "../../Redux/Action";
 
-import App from "../Presentational Components/App";
-import Loading from "../Presentational Components/Loading/Loading";
+import App from "../../Presentational Components/MainPage/App"
+import Loading from "../../Presentational Components/MainPage/Loading/Loading";
 
 class RoomsData extends React.Component
 {
