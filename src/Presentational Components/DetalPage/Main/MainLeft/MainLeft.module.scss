@@ -1,0 +1,51 @@
+.wrap{
+    .title{
+        font-size: 3rem;
+        font-weight: 400;
+        color: #000;
+        height: 100px;
+        line-height: 100px;
+    }
+    .detail{
+        font-size: 1.35rem;
+        font-weight: 300;
+        line-height: 1.7;
+    }
+    .descri{
+        margin-top: 50px;
+        font-size: 1.35rem;
+        font-weight: 300;
+        line-height: 1.5;
+    }
+    .separate{
+        margin: 2.75rem 0 2.75rem .3125rem;
+        .lineBreak{
+            display: inline-block;
+            width: 2px;
+            height: 20px;
+            transform: rotate(-45deg);
+            background-color: #000;
+            margin-right: .75rem;
+        }
+    }
+    .checkTime{
+        display: flex;
+        margin-bottom: 50px;
+        .checkin,
+        .checkout{
+            margin-right: 100px;
+            p{
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+            span{
+                font-size: 1.6rem;
+            }
+        }
+    }
+    .amenities{
+        width: 100%;
+        border-top: 1.5px solid #999;
+        margin-bottom: 30px;
+    }
+}
