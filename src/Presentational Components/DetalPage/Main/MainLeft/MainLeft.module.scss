@@ -4,7 +4,7 @@
         font-weight: 400;
         color: #000;
         height: 100px;
-        line-height: 100px;
+        //line-height: 100px;
     }
     .detail{
         font-size: 1.35rem;
@@ -33,7 +33,7 @@
         margin-bottom: 50px;
         .checkin,
         .checkout{
-            margin-right: 100px;
+            margin-right: 200px;
             p{
                 font-size: 2rem;
                 margin-bottom: 20px;
@@ -47,5 +47,6 @@
         width: 100%;
         border-top: 1.5px solid #999;
         margin-bottom: 30px;
+        margin-bottom: 6px;
     }
 }

@@ -1,0 +1,33 @@
+.wrap {
+    margin-top: 40px;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        .available,
+        .nonavailable {
+            display: flex;
+            margin-right: 150px;
+            margin-bottom: 1.5625rem;
+            width: 220px;
+            img {
+                width: 35px;
+                height: 35px;
+                color: #000;
+            }
+            span {
+                font-size: 1.5em;
+                margin-left: 20px;
+                line-height: 35px;
+                color: #000;
+            }
+        }
+        .nonavailable{
+            img,
+            span{
+                opacity: .25;
+            }
+        }
+
+    }
+  
+}

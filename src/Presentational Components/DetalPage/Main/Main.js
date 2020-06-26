@@ -10,7 +10,10 @@ const Main = (props) => {
                 <MainLeft roomInfo = {props.roomInfo}/>
             </div>
             <div className={style.right}>
-                <MainRight />
+                <MainRight 
+                    holidayPrice = {props.roomInfo.holidayPrice}
+                    normalDayPrice = {props.roomInfo.normalDayPrice}
+                />
             </div>
         </div>
     )

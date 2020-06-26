@@ -1,0 +1,59 @@
+.wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .info{
+        width: 100%;
+        .name,
+        .phone{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            label{
+                margin-bottom: .5rem;
+                font-size: 1.25rem;
+                font-weight: 400;
+            }
+            input{
+                width: 100%;
+                height: 43px;
+                margin-bottom: 15px;
+                border: 1px solid rgba(153, 153, 153,.5);
+                background-color: #f8f8f8;
+                outline: none;
+                font-size: 25px;
+            }
+        }
+        .date{
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            label{
+                margin-bottom: .5rem;
+                font-size: 1.25rem;
+                font-weight: 400;
+            }
+        }
+        
+
+
+        .submit{
+            margin: 20px 0px;
+            width: 100%;
+            height: 48px;
+            button{
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                color: #fff;
+                font-size: 20px;
+                border: none;
+                cursor: pointer;
+                transition: .6s;
+            }
+            :hover{
+                background-color: #555;
+            }
+        }
+    }
+}

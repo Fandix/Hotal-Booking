@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const RoomHeader = (props) => {
     const { img,onClick } = props;
-    console.log(onClick)
     return(
         <div className={style.wrap}>
             <Link to={"/"}>

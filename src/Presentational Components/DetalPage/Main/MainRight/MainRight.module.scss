@@ -1,0 +1,45 @@
+.wrap{
+    margin-left: 45px;
+    width: 95%;
+    //height: 577px;
+    border: 1px solid rgba(153, 153, 153,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .box{
+        margin-top: 25px;
+        width: 90%;
+        .price{
+            border-bottom: 1px solid rgba(153, 153, 153,.5);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .nomor,
+            .weekend{
+                width: 50%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                p{
+                    margin-bottom: .5rem;
+                    color: #6d7278;
+                }
+                span{
+                    font-size: 1.75rem;
+                    font-weight: 300;
+                }
+            }
+            .nomor{
+                border-right: 1px solid rgba(153, 153, 153,.5);
+            }
+        }
+        .customerInfo{
+           width: 100%;
+           height: 100%;
+           margin-top: 30px;
+        }
+    }
+}

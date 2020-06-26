@@ -80,9 +80,37 @@ const FetchSingleDataReducers = (state=FetchSingleDataInit,action) => {
 
 }
 
+//=============================== Booking Room Customer Infomation
+
+const CustomerStateInit = {
+    NameValue:"",
+    TelValue:""
+};
+
+const BookingCustomerInfo = (state=CustomerStateInit,action) => {
+    switch (action.type) {
+        case "CHANGE_NAME_STATE":
+            return{
+                ...state,
+                NameValue:action.value
+            }
+        case "CHANGE_TEL_STATE":
+                return{
+                    ...state,
+                    TelValue:action.value
+                }
+            
+    
+        default:
+            return state;
+    }
+};
+
+
 const Reducers = combineReducers({
     FetchDataReducers,
-    FetchSingleDataReducers
+    FetchSingleDataReducers,
+    BookingCustomerInfo
 });
 
 export default Reducers;

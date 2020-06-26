@@ -1,8 +1,8 @@
 import React from "react";
-import style from "./MainLeft.module.scss"
+import style from "./MainLeft.module.scss";
+import Amenities from "./Amenities/Amenities";
 
 const MainLeft = (props) => {
-    console.log(props.roomInfo);
     const { GuestMin, GuestMax, Footage, Bed, 'Private-Bath': privateBath } = props.roomInfo.descriptionShort;
     const { checkInEarly,checkInLate,checkOut } = props.roomInfo.checkInAndOut;
 
@@ -35,7 +35,9 @@ const MainLeft = (props) => {
                 </div>
             </div>
             {/********* Room Amenities **********/}
-            <div className={style.amenities}></div>
+            <div className={style.amenities}>
+                <Amenities Ameni = {props.roomInfo.amenities}/>
+            </div>
         </div>
     )
 };
