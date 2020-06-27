@@ -1,10 +1,13 @@
 import React from "react";
 import style from "./CustomerInfo.module.scss";
+import CalPrice from "./CalPrice/CalPrice";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { addDays, eachDayOfInterval, format, parseISO } from 'date-fns';
 
 const CustomerInfo = (props) => {
-    const { onChange } = props;
+    const { onChange,setStartDate,setEndDate,StartDate,NndDate,PriceCal } = props;
+    const { normalDayPrice,holidayPrice } = props
 
     return(
         <form className={style.wrap}>
@@ -31,12 +34,46 @@ const CustomerInfo = (props) => {
                 <div className={style.date}>
                     <label>Date</label>
                     <div className={style.dateForm}>
-                        <DatePicker/>
-                        <DatePicker/>
+                        <DatePicker
+                            selected={StartDate}
+                            startDate={StartDate}
+                            selectsStart
+                            endDate={NndDate}
+                            minDate={addDays(new Date(), 1)}
+                            maxDate={addDays(new Date(), 90)}
+                            dateFormat="yyyy-MM-dd"
+                            placeholderText="Check in"
+                            onChange={(startDate)=>setStartDate(startDate)}
+                            
+                        />
+                        &#8594;
+                        <DatePicker
+                            selected={NndDate}
+                            selectsEnd
+                            startDate={StartDate}
+                            endDate={NndDate}
+                            minDate={addDays(NndDate, 1)}
+                            maxDate={addDays(new Date(), 90)}
+                            dateFormat="yyyy-MM-dd"
+                            placeholderText="Check out"
+                            onChange={(NndDate) => setEndDate(NndDate)}
+                        />
                     </div>
                 </div>
                 {/************* Calculate Price *************/}
-                <div className={style.calPrice}></div>
+                {
+                    StartDate === null?""
+                    :
+                    <div className={PriceCal===true?style.calPrice:style.noncalPrice}>
+                        <CalPrice   
+                            normalDayPrice={normalDayPrice}
+                            holidayPrice={holidayPrice}
+                            startDate={StartDate}
+                            endDate={NndDate}
+                        />
+                    </div>
+                }
+                
                 {/************* Submit Button *************/}
                 <div className={style.submit}>
                     <button>Reserve</button>

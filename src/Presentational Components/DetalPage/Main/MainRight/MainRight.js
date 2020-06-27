@@ -20,7 +20,10 @@ const MainRight = (props) => {
                 </div>
                 {/*************** Booking Customer Information ***************/}
                 <div className={style.customerInfo}>   
-                    <CustomerInformation />
+                    <CustomerInformation 
+                        holidayPrice={holidayPrice}
+                        normalDayPrice={normalDayPrice}
+                    />
                 </div>
             </div>
         </div>

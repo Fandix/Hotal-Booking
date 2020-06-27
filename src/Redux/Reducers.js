@@ -99,8 +99,32 @@ const BookingCustomerInfo = (state=CustomerStateInit,action) => {
                     ...state,
                     TelValue:action.value
                 }
-            
-    
+        default:
+            return state;
+    }
+};
+
+//=============================== Booking Date
+
+const BookingDateInit = {
+    StartDate:null,
+    NndDate:null,
+    PriceCal:false
+};
+
+export const BookingDate = (state=BookingDateInit,action) => {
+    switch (action.type) {
+        case "CHANGE_START_DATE":
+            return{
+                ...state,
+                StartDate:action.date,
+                PriceCal:true
+            }
+        case "CHANGE_END_DATE":
+            return{
+                ...state,
+                NndDate:action.date
+            }
         default:
             return state;
     }
@@ -110,7 +134,8 @@ const BookingCustomerInfo = (state=CustomerStateInit,action) => {
 const Reducers = combineReducers({
     FetchDataReducers,
     FetchSingleDataReducers,
-    BookingCustomerInfo
+    BookingCustomerInfo,
+    BookingDate
 });
 
 export default Reducers;

@@ -15,3 +15,19 @@ export const ChangeCustomerInfoState = (name,value) => {
         }
     }
 };
+
+//=================================  Change Customer Booking Date
+
+export const ChangeBookingStartDate = (date) => {
+    return{
+        type : "CHANGE_START_DATE",
+        date
+    }
+};
+
+export const ChangeBookingEndDate = (date) => {
+    return{
+        type : "CHANGE_END_DATE",
+        date
+    }
+};
