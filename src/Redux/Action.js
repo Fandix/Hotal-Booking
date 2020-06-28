@@ -72,3 +72,20 @@ export const FetchSingleRoomData = (id) => {
         })
     }
 };
+
+//=================================  Room Detail Header image-lightbox
+
+export const OpenHeaderImgLightBox = (OpenState,imgIndex) => {
+    return{
+        type : "OPEN_LIGHT_BOX",
+        OpenState,
+        imgIndex
+    }
+};
+
+export const ChangeImgIndex = (ImgIndex) => {
+    return{
+        type : "CHANGE_IMG_INDEX",
+        ImgIndex
+    }
+};

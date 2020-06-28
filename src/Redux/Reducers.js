@@ -80,6 +80,31 @@ const FetchSingleDataReducers = (state=FetchSingleDataInit,action) => {
 
 }
 
+//=============================== Header Img LightBox
+
+const HeaderHightBoxInit = {
+    photoIndex: 0,
+    isOpen: false,
+};
+
+const HeaderImgLight = (state=HeaderHightBoxInit,action) => {
+    switch (action.type) {
+        case "OPEN_LIGHT_BOX":
+            return{
+                ...state,
+                isOpen:action.OpenState,
+                photoIndex:action.imgIndex
+            }
+        case "CHANGE_IMG_INDEX":
+            return{
+                ...state,
+                photoIndex:action.ImgIndex
+            }
+        default:
+            return state;
+    }
+};
+
 //=============================== Booking Room Customer Infomation
 
 const CustomerStateInit = {
@@ -135,7 +160,8 @@ const Reducers = combineReducers({
     FetchDataReducers,
     FetchSingleDataReducers,
     BookingCustomerInfo,
-    BookingDate
+    BookingDate,
+    HeaderImgLight
 });
 
 export default Reducers;

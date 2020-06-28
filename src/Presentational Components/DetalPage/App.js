@@ -1,12 +1,12 @@
 import React from "react";
-import RoomInfoHeader from "../../Container Components/DetalPage/RoomInfoHeader"
+import RoomDetaiHeader from "../../Container Components/DetalPage/Header"
 import Main from "./Main/Main"
 
 const RoomDetail = (props) => {
     const { Room } = props;
     return (
         <div>
-            <RoomInfoHeader img={Room[0].imageUrl} />
+            <RoomDetaiHeader img={Room[0].imageUrl} name={Room[0].name}/>
             <Main roomInfo={Room[0]}/>
         </div>
     )

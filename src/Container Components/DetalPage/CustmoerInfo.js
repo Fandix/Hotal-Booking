@@ -34,7 +34,8 @@ const mapDispatchToProps = (dispatch) => {
         },
         setEndDate:(endDate=null) => {
             dispatch(ChangeBookingEndDate(endDate));
-        } 
+        },
+        dispatch : dispatch 
     }
 };
 
