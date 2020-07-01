@@ -67,6 +67,12 @@ export const BookingError = (errorType,isError) => {
     }
 }
 
+export const BookingErrorinit = () => {
+    return{
+        type:"ErrorInit"
+    }
+}
+
 //=================================  Submit Booking Information
 
 const BookingInfo = (res,err) => {

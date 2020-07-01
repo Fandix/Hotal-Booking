@@ -4,12 +4,13 @@ import CalPrice from "./CalPrice/CalPrice";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { addDays } from 'date-fns';
-import { ChangeBookingStartDate,ChangeBookingEndDate } from "../../../../../Redux/CustomerAction"
+import { ChangeBookingStartDate,ChangeBookingEndDate,BookingErrorinit } from "../../../../../Redux/CustomerAction"
 class CustomerInfo extends React.Component{
 
     componentWillUnmount(){
         this.props.dispatch(ChangeBookingStartDate(null));
         this.props.dispatch(ChangeBookingEndDate(null));
+        this.props.dispatch(BookingErrorinit());
     }
 
     render(){

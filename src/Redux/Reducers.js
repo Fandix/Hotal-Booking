@@ -198,6 +198,11 @@ const SubmitError = (state=SubmitInit,action) => {
                 date:false
             }
 
+        case "ErrorInit":
+            return{
+                state:SubmitInit,
+            }
+
         default:
             return state;
     }
