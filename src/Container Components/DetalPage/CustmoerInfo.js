@@ -1,17 +1,30 @@
 import { connect } from "react-redux"
 import CustomerInfo from "../../Presentational Components/DetalPage/Main/MainRight/CustomerInfo/CustomerInfo"
-import { ChangeCustomerInfoState,ChangeBookingStartDate,ChangeBookingEndDate } from "../../Redux/CustomerAction"
+import { ChangeCustomerInfoState,ChangeBookingStartDate,ChangeBookingEndDate,BookingError } from "../../Redux/CustomerAction"
 import { addDays, eachDayOfInterval, format, parseISO } from 'date-fns';
 
 const mapStateToProps = (state) => {
     const { NameValue,TelValue } = state.BookingCustomerInfo;
     const { StartDate,NndDate,PriceCal } = state.BookingDate;
+    console.log(state.BookingCustomerInfo);
+
     return{
         NameValue,
         TelValue,
         StartDate,
         NndDate,
-        PriceCal
+        PriceCal,
+        SubmitData:{
+            name : state.BookingCustomerInfo.NameValue,
+            phone : state.BookingCustomerInfo.TelValue,
+            startDate : state.BookingDate.StartDate,
+            endDate : state.BookingDate.NndDate
+        },
+        SubmitError:{
+            nameError:state.SubmitError.name,
+            phoneError:state.SubmitError.phone,
+            dateError:state.SubmitError.date
+        }
     }
 };
 
@@ -35,7 +48,35 @@ const mapDispatchToProps = (dispatch) => {
         setEndDate:(endDate=null) => {
             dispatch(ChangeBookingEndDate(endDate));
         },
-        dispatch : dispatch 
+        dispatch : dispatch,
+        onSubmit : (data) => {
+            console.log(data)
+            let errorFlag = 0;
+            if(data.name === ""){
+                dispatch(BookingError("Name",false));
+                errorFlag = errorFlag + 1;
+            }else{
+                dispatch(BookingError("Name",true));
+            }
+
+            if(data.phone === ""){
+                dispatch(BookingError("Tel",false));
+                errorFlag = errorFlag + 1;
+            }else{
+                dispatch(BookingError("Tel",true));
+            }
+
+            if(data.startDate === null || data.endDate === null){
+                dispatch(BookingError("Date",false));
+                errorFlag = errorFlag + 1;
+            }else{
+                dispatch(BookingError("Date",true));
+            }
+
+            if(errorFlag !== 0){
+                return;
+            }
+        } 
     }
 };
 

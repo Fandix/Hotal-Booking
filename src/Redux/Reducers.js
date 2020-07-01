@@ -155,13 +155,62 @@ export const BookingDate = (state=BookingDateInit,action) => {
     }
 };
 
+//=============================== Submit Information Error
+
+const SubmitInit = {
+    name:false,
+    phone:false,
+    date:false
+};
+
+const SubmitError = (state=SubmitInit,action) => {
+    switch (action.type) {
+        case "NAME_ERROR":
+            return{
+                ...state,
+                name:true
+            }
+        case "NAME_UNERROR":
+            return{
+                ...state,
+                name:false
+            }
+
+        case "TEL_ERROR":
+            return{
+                ...state,
+                phone:true
+            }
+        case "TEL_UNERROR":
+            return{
+                ...state,
+                phone:false
+            }
+        
+        case "DATE_ERROR":
+            return{
+                ...state,
+                date:true
+            }
+        case "DATE_UNERROR":
+            return{
+                ...state,
+                date:false
+            }
+
+        default:
+            return state;
+    }
+};
+
 
 const Reducers = combineReducers({
     FetchDataReducers,
     FetchSingleDataReducers,
     BookingCustomerInfo,
     BookingDate,
-    HeaderImgLight
+    HeaderImgLight,
+    SubmitError
 });
 
 export default Reducers;

@@ -23,6 +23,10 @@
                 outline: none;
                 font-size: 25px;
             }
+            p{
+                color: #f00;
+                margin-bottom: 15px;
+            }
         }
         .date{
             display: flex;
@@ -50,8 +54,13 @@
                     outline: none;
                 }
             }
+            p{
+                color: #f00;
+                margin-bottom: 15px;
+                margin-top: 12px;
+            }
         }
-        
+
         .calPrice{
             margin-top: 20px;
             display: block;

@@ -13,8 +13,9 @@ class CustomerInfo extends React.Component{
     }
 
     render(){
-        const { onChange,setStartDate,setEndDate,StartDate,NndDate,PriceCal } = this.props;
+        const { onChange,setStartDate,setEndDate,StartDate,NndDate,PriceCal,onSubmit } = this.props;
         const { normalDayPrice,holidayPrice } = this.props
+        console.log(this.props.SubmitError)
         return(
                 <form className={style.wrap}>
                 <div className={style.info}>
@@ -26,6 +27,7 @@ class CustomerInfo extends React.Component{
                             name="Name"
                             value={this.props.NameValue}
                         />
+                        {this.props.SubmitError.nameError === true?<p>Name must be filled in</p>:""}
                     </div>
                     {/************* Phone *************/}
                     <div className={style.phone}>
@@ -35,6 +37,7 @@ class CustomerInfo extends React.Component{
                             name="Tel"
                             value={this.props.TelValue}
                         />
+                        {this.props.SubmitError.phoneError === true?<p>Phone number must be filled in</p>:""}
                     </div>
                     {/************* Date *************/}
                     <div className={style.date}>
@@ -65,6 +68,7 @@ class CustomerInfo extends React.Component{
                                 onChange={(NndDate) => setEndDate(NndDate)}
                             />
                         </div>
+                        {this.props.SubmitError.dateError === true?<p>Dates should be selected</p>:""}
                     </div>
                     {/************* Calculate Price *************/}
                     {
@@ -82,7 +86,16 @@ class CustomerInfo extends React.Component{
                     
                     {/************* Submit Button *************/}
                     <div className={style.submit}>
-                        <button>Reserve</button>
+                        <button 
+                            onClick={
+                                (e) => {
+                                    e.preventDefault()
+                                    onSubmit(this.props.SubmitData)
+                                }
+                            }       
+                        >
+                            Reserve
+                        </button>
                     </div>
                 </div>
             </form>
