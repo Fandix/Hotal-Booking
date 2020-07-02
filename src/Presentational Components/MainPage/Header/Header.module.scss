@@ -1,11 +1,13 @@
 .wrap{
     position: relative;
-    height: 560px;
     overflow: hidden;
+    height: 250px;
+    width: 100%;
     .box{
+      width: 100%;
       display: block;
       position: absolute;
-      top: 15%;
+      top: 25%;
       left: 0;
       bottom: 0;
       right: 0;
@@ -17,76 +19,54 @@
       align-items: center;
       flex-direction: column;
       .logo{
-
         img{
-          width: 200px;
-          height: 200px;
+          width: 100px;
+          height: 100px;
         }
       }
       .social{
-        width: 600px;
-        height: 200px;
+        width: 80%;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         .app{
-          width: 30%;
-          height: 80%;
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          border-right: 1px solid #fff;
-          .applogo{
-            width: 50%;
-            margin-right: 5px;
-            svg:first-child{
-              margin-right: 15px;
-            }
-            svg{
-              width: 31px;
-              height: 31px;
-              color: #fff;
-              cursor: pointer;
-            }
-          }
+          display: none;
         }
         .detail{
-            width: 70%;
-            height: 80%;
-            .Content{
+          width: 100%;
+          height: 100%;
+          .Content{
               width: 100%;
               height: 100%;
-              margin-left: 27px;
               display: flex;
               flex-direction: column;
               justify-content: center;
-              .phone{
-                margin-top: 13px;
-              }
+              margin-top: 15px;
               .phone,
               .mail,
               .address{
-                display: flex;
-                height: 30px;
-                margin-bottom: 13px;
-                svg{
-                  width: 25px;
-                  height: 25px;
-                  color: #fff;
-                  margin-right: 21px;
-                }
-                p{
-                  color: #fff;
-                  font-size: 18px;
-                  font-weight: 500;
-                  line-height: 30px;
-                }
+                  display: flex;
+                  height: 15px;
+                  margin-bottom: 8px;
+                  svg{
+                    width: 12px;
+                    height: 12px;
+                    color: #fff;
+                    margin-right: 11px;
+                  }
+                  p{
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 15px;
+                  }
               }
             }
+          }
         }
-      }    
-    }
-
-    .slides{
+      }
+      .slides{
         position: absolute;
         z-index: 0;
         top: 0;
@@ -100,9 +80,77 @@
           width: 33.333%;
           height: 100%;
         }
-        
     }
 }
+
+
+@media screen and (min-width: 960px){
+    .wrap{
+      height: 560px;
+      .box{
+        top: 15%;
+        .logo{
+          img{
+            width: 200px;
+            height: 200px;
+          }
+        }
+        .social{
+          width: 600px;
+          height: 200px;
+          flex-direction: row;
+          .app{
+            width: 30%;
+            height: 80%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            border-right: 1px solid #fff;
+            .applogo{
+              width: 50%;
+              margin-right: 5px;
+              svg:first-child{
+                margin-right: 15px;
+              }
+              svg{
+                width: 31px;
+                height: 31px;
+                color: #fff;
+                cursor: pointer;
+              }
+            }
+          }
+          .detail{
+              width: 70%;
+              height: 80%;
+              .Content{
+                margin-left: 27px;
+                margin-top: 0px;
+                .phone{
+                  margin-top: 13px;
+                }
+                .phone,
+                .mail,
+                .address{
+                  height: 30px;
+                  margin-bottom: 13px;
+                  svg{
+                    width: 25px;
+                    height: 25px;
+                    margin-right: 21px;
+                  }
+                  p{
+                    font-size: 18px;
+                    line-height: 30px;
+                  }
+                }
+              }
+          }
+        }    
+      }
+  }
+}
+
 
 @keyframes slider-animation {
   0%,
