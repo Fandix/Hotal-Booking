@@ -4,19 +4,19 @@
 # Demo
 Live URL : https://hotal-booking.fandix.vercel.app/
 
-![Booking MainPage](https://ithelp.ithome.com.tw/upload/images/20200704/20124767IXz5AzH7Td.png)
+![Booking MainPage](https://ithelp.ithome.com.tw/upload/images/20200704/20124767IXz5AzH7Td.png)<br>
 Booking Main Page in PC<br>
 
-![Booking Room Detail Page](https://ithelp.ithome.com.tw/upload/images/20200704/20124767vw757SCw4C.png)
+![Booking Room Detail Page](https://ithelp.ithome.com.tw/upload/images/20200704/20124767vw757SCw4C.png)<br>
 Booking Room Detail Page in PC<br>
 
-![Booking MainPage](https://ithelp.ithome.com.tw/upload/images/20200704/20124767vbPOTcW3yv.png)
+![Booking MainPage](https://ithelp.ithome.com.tw/upload/images/20200704/20124767vbPOTcW3yv.png)<br>
 Booking Main Page in Mobile<br>
 
-![Booking Room Detail Page](https://ithelp.ithome.com.tw/upload/images/20200704/20124767oZKQiXhg96.png)
+![Booking Room Detail Page](https://ithelp.ithome.com.tw/upload/images/20200704/20124767oZKQiXhg96.png)<br>
 Booking Room Detail Page in Mobile<br>
 
-設計稿 : https://z7x2c0v0b8.github.io/the_f2e_2nd/hotel_reservation.html#artboard0
+設計稿 : https://z7x2c0v0b8.github.io/the_f2e_2nd/hotel_reservation.html#artboard0<br>
 
 # 在此專案中使用了那些技術
 1. React.js
