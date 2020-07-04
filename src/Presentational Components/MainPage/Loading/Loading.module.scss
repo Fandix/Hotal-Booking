@@ -1,6 +1,6 @@
 .wrap{
-    width: 100vx;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,5 +10,22 @@
         display: flex;
         flex-direction: row;
         width: 500px;
+    }
+
+}
+@media screen and (min-width: 960px){
+    .wrap{
+        width: 100vx;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        flex-direction: column;
+        .loading{
+            display: flex;
+            flex-direction: row;
+            width: 500px;
+        }
     }
 }

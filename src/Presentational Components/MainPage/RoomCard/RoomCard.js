@@ -3,6 +3,27 @@ import style from "./RoomCard.module.scss"
 import { Link } from "react-router-dom";
 
 const RoomCard = (props) => {
+    const ScrollTop = (number = 0,time) => {
+        if(!time){
+            document.body.scrollTop = document.documentElement.scrollTop = number;
+            return number;
+        }
+
+        const spacingTime = 20;
+        let spacingInex = time / spacingTime;
+        let nowTop = document.body.scrollTop + document.documentElement.scrollTop;
+        let everTop = (number - nowTop) / spacingInex;
+
+        let scrollTimer = setInterval(() => {
+            if (spacingInex > 0) {
+                spacingInex--;
+                this.ScrollTop(nowTop += everTop);
+            } else {
+                clearInterval(scrollTimer); 
+            }
+        }, spacingTime);
+    };
+
     const {holidayPrice,imageUrl,name,normalDayPrice,id} = props.roomdata;
     return(
         <Link 
@@ -11,6 +32,7 @@ const RoomCard = (props) => {
                 state: { roomID: id },
             }}
             className={style.link}
+            onClick={ScrollTop}
         >
             <div className={style.wrap}>
                 <div className={style.img}>
