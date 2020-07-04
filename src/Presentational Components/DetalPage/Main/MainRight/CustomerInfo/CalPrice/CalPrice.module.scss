@@ -8,8 +8,7 @@
         width: 95%;
         margin: 20px 0;
         .Weekday,
-        .Weekend
-        {
+        .Weekend{
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -20,11 +19,11 @@
                 align-items: center;
                 height: 45px;
                 p{
-                    font-size: 20px;
+                    font-size: 16px;
                 }
                 span{
-                    font-size: 16px;
-                    margin-left: 10px;
+                    font-size: 12px;
+                    margin-left: 5px;
                 }
             }
         }
@@ -35,15 +34,41 @@
             margin-top: 15px;
             height: 45px;
             p{
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: 600;
             }
             span{
-                font-size: 30px;
+                font-size: 24px;
                 font-weight: 600;
             }
         }
-        
-        
+    }
+}
+
+@media screen and (min-width: 960px){
+    .wrap{
+        .box{
+            .Weekday,
+            .Weekend{
+                .cal{
+                    p{
+                        font-size: 20px;
+                    }
+                    span{
+                        font-size: 16px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+            .total{
+                p{
+                    font-size: 20px;
+ 
+                }
+                span{
+                    font-size: 30px;
+                }
+            }
+        }
     }
 }
