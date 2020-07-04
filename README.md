@@ -10,7 +10,7 @@ Booking Main Page in PC<br>
 ![Booking Room Detail Page](https://ithelp.ithome.com.tw/upload/images/20200704/20124767vw757SCw4C.png)
 Booking Room Detail Page in PC<br>
 
-![[Booking MainPage](https://ithelp.ithome.com.tw/upload/images/20200704/20124767vbPOTcW3yv.png)
+![Booking MainPage](https://ithelp.ithome.com.tw/upload/images/20200704/20124767vbPOTcW3yv.png)
 Booking Main Page in Mobile<br>
 
 ![Booking Room Detail Page](https://ithelp.ithome.com.tw/upload/images/20200704/20124767oZKQiXhg96.png)
