@@ -14,7 +14,7 @@ class CustomerInfo extends React.Component{
     }
 
     render(){
-        const { onChange,setStartDate,setEndDate,StartDate,NndDate,PriceCal,onSubmit } = this.props;
+        const { onChange,setStartDate,setEndDate,StartDate,NndDate,PriceCal,onSubmit,setBookingInit } = this.props;
         const { normalDayPrice,holidayPrice } = this.props
         console.log(this.props.SubmitError)
         return(
@@ -90,8 +90,9 @@ class CustomerInfo extends React.Component{
                         <button 
                             onClick={
                                 (e) => {
-                                    e.preventDefault()
-                                    onSubmit(this.props.SubmitData)
+                                    e.preventDefault();
+                                    onSubmit(this.props.SubmitData);
+                                    setBookingInit();
                                 }
                             }       
                         >
