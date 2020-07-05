@@ -1,7 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
 import style from "./Panel.module.scss"
-import { connect } from "react-redux";
 
 class Panel extends React.Component{
     state = {
