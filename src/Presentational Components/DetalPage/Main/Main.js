@@ -13,6 +13,7 @@ const Main = (props) => {
                 <MainRight 
                     holidayPrice = {props.roomInfo.holidayPrice}
                     normalDayPrice = {props.roomInfo.normalDayPrice}
+                    id = {props.roomInfo.id}
                 />
             </div>
         </div>

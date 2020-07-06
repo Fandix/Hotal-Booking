@@ -3,7 +3,7 @@ import style from "./MainRight.module.scss";
 import CustomerInformation from "../../../../Container Components/DetalPage/CustmoerInfo"
 
 const MainRight = (props) => {
-    const { holidayPrice,normalDayPrice } = props
+    const { holidayPrice,normalDayPrice,id } = props
     return(
         <div className={style.wrap}>
             <div className={style.box}>
@@ -23,6 +23,7 @@ const MainRight = (props) => {
                     <CustomerInformation 
                         holidayPrice={holidayPrice}
                         normalDayPrice={normalDayPrice}
+                        id={id}
                     />
                 </div>
             </div>

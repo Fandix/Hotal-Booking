@@ -5,6 +5,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { addDays } from 'date-fns';
 import { ChangeBookingStartDate,ChangeBookingEndDate,BookingErrorinit } from "../../../../../Redux/CustomerAction"
+import "./loading.css"
+
 class CustomerInfo extends React.Component{
 
     componentWillUnmount(){
@@ -15,8 +17,7 @@ class CustomerInfo extends React.Component{
 
     render(){
         const { onChange,setStartDate,setEndDate,StartDate,NndDate,PriceCal,onSubmit,setBookingInit } = this.props;
-        const { normalDayPrice,holidayPrice } = this.props
-        console.log(this.props.SubmitError)
+        const { normalDayPrice,holidayPrice,isPosting,id } = this.props
         return(
                 <form className={style.wrap}>
                 <div className={style.info}>
@@ -91,12 +92,22 @@ class CustomerInfo extends React.Component{
                             onClick={
                                 (e) => {
                                     e.preventDefault();
-                                    onSubmit(this.props.SubmitData);
+                                    onSubmit(this.props.SubmitData,id);
                                     setBookingInit();
                                 }
                             }       
                         >
-                            Reserve
+                            {
+                                isPosting === true?
+                                <div className={style.posting}>
+                                    <div className="sk-wave">
+                                        <div className="sk-rect sk-rect1"></div>
+                                        <div className="sk-rect sk-rect2"></div>
+                                        <div className="sk-rect sk-rect3"></div>
+                                    </div>
+                                </div>:
+                                <p>Reserve</p>
+                            }
                         </button>
                     </div>
                 </div>

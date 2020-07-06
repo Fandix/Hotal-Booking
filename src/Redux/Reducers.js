@@ -160,7 +160,8 @@ export const BookingDate = (state=BookingDateInit,action) => {
 const SubmitInit = {
     name:false,
     phone:false,
-    date:false
+    date:false,
+    post:false
 };
 
 const SubmitError = (state=SubmitInit,action) => {
@@ -202,11 +203,44 @@ const SubmitError = (state=SubmitInit,action) => {
             return{
                 state:SubmitInit,
             }
-
         default:
             return state;
     }
 };
+
+//=============================== Booking Post 
+const BookingInit = {
+    post:false,
+    isPosting:false,
+}
+
+const BookingPost = (state = BookingInit,action) => {
+    switch (action.type) {
+        case "SUBMIT_SUCCESS":
+            return{
+                ...state,
+                post:true
+            }
+        case "SUBMIT_FAIL":
+            return{
+                ...state,
+                past:false
+            }
+        case "SUBMIT_INIT":
+            return{
+                ...state,
+                post:false
+            }
+        case "IS_POSTING":
+            return{
+                ...state,
+                isPosting : action._isPosting
+            }
+    
+        default:
+            return state;
+    }
+}
 
 
 const Reducers = combineReducers({
@@ -215,7 +249,8 @@ const Reducers = combineReducers({
     BookingCustomerInfo,
     BookingDate,
     HeaderImgLight,
-    SubmitError
+    SubmitError,
+    BookingPost
 });
 
 export default Reducers;

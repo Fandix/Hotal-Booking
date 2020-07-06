@@ -1,14 +1,20 @@
 import { connect } from "react-redux"
 import CustomerInfo from "../../Presentational Components/DetalPage/Main/MainRight/CustomerInfo/CustomerInfo"
-import { ChangeCustomerInfoState,ChangeBookingStartDate,ChangeBookingEndDate,BookingError } from "../../Redux/CustomerAction"
+import { ChangeCustomerInfoState,ChangeBookingStartDate,ChangeBookingEndDate,BookingError,SubmitBooking } from "../../Redux/CustomerAction"
 import { addDays } from 'date-fns';
 import _Panel from "../Panel/Panel";
-import axios from "../../Common/axios";
 
 const mapStateToProps = (state) => {
     const { NameValue,TelValue } = state.BookingCustomerInfo;
     const { StartDate,NndDate,PriceCal } = state.BookingDate;
-    console.log(state.BookingCustomerInfo);
+    const { post,isPosting } = state.BookingPost;
+
+    const PostState = (_state) => {
+        if(_state === true){
+            _Panel.open()
+        }
+    };
+    PostState(post);
 
     return{
         NameValue,
@@ -26,7 +32,8 @@ const mapStateToProps = (state) => {
             nameError:state.SubmitError.name,
             phoneError:state.SubmitError.phone,
             dateError:state.SubmitError.date
-        }
+        },
+        isPosting:isPosting
     }
 };
 
@@ -57,7 +64,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(ChangeBookingStartDate(null));
             dispatch(ChangeBookingEndDate(null));
         },
-        onSubmit : (data) => {
+        onSubmit : (data,id) => {
             let errorFlag = 0;
             if(data.name === ""){
                 dispatch(BookingError("Name",false));
@@ -83,14 +90,8 @@ const mapDispatchToProps = (dispatch) => {
                 return;
             }
 
-            axios.post("http://localhost:3004/tasks",data)
-            .then(
-                _Panel.open()
-            )
-            .catch(err => {
-                console.log(err);
-            })
-           
+            dispatch(SubmitBooking(id,data));
+
         } 
     }
 };

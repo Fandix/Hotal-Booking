@@ -87,15 +87,36 @@ const BookingInfo = (res,err) => {
     }
 };
 
+const idPosting = (_isPosting) => {
+    return{
+        type:"IS_POSTING",
+        _isPosting
+    }
+}
+
+const SubmitState = () => {
+    return{
+        type:"SUBMIT_INIT"
+    }
+}
+
 export const SubmitBooking = (id,data) => {
     return (dispatch) => {
-        axios.post(`/room/${id}`,data)
+        dispatch(idPosting(true));
+        axios.post(`/room/${id}/`,JSON.stringify(data))
         .then(res => {
             dispatch(BookingInfo(res,null))
+            dispatch(SubmitState())
+            dispatch(idPosting(false));
         })
         .catch(err => {
+            console.log(err)
             dispatch(BookingInfo(null,err))
+            dispatch(idPosting(false));
         })
     }
 };
+
+
+
 
