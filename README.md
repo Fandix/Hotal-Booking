@@ -6,7 +6,7 @@
 
 Live URL : https://hotal-booking.fandix.vercel.app/?fbclid=IwAR0MbfoGLyaSmgDrvVCGfsYrWpJCgdJdT6erdWz2ol0D3TMWc3SpYlIttpM<br>
 
-![MainPage in PC](https://ithelp.ithome.com.tw/upload/images/20200706/20124767UP20xRR1PC.png)<br>
+![Maing Page in PC](https://ithelp.ithome.com.tw/upload/images/20200706/20124767onK5m34ttU.png)<br>
 Main Page in PC<br>
 
 ![Room Detail in PC](https://ithelp.ithome.com.tw/upload/images/20200706/20124767S1lzadMqBU.png)<br>
