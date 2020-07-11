@@ -103,7 +103,7 @@ const SubmitState = () => {
 export const SubmitBooking = (id,data) => {
     return (dispatch) => {
         dispatch(idPosting(true));
-        axios.post(`/room/${id}/`,JSON.stringify(data))
+        axios.post(`https://stormy-citadel-71123.herokuapp.com/HotalBooking`,data)
         .then(res => {
             dispatch(BookingInfo(res,null))
             dispatch(SubmitState())
